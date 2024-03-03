@@ -7,7 +7,10 @@ const Navbar = () => {
   return (
     <header className=" h-[10vh] prime-bg text-[#f5f5f5] drop-shadow-xl">
       <div className="flex flex-row justify-between items-center px-4 w-full ">
-        <Link href={'/'} className="bolder text-lg md:text-xl lg:text-3xl ">
+        <Link
+          href={'/'}
+          className="bolder uppercase text-lg md:text-xl lg:text-3xl "
+        >
           Smart-Farm
         </Link>
         <div className="md:flex gap-5 hidden">

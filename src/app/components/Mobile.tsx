@@ -1,34 +1,62 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Link from 'next/link';
 import { NavLinks } from '../utils/Links';
 const Mobile = () => {
-  const [open, setOpen] = useState(true);
+  const [screenSize, setScreenSize] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 0,
+  });
+  const [open, setOpen] = useState(false);
   const handleMenu = () => {
     setOpen(!open);
   };
+  useEffect(() => {
+    const handleScreen = () => {
+      setScreenSize({
+        width: window.innerWidth,
+      });
+      if (window.innerWidth > 425) {
+        setOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleScreen);
+    return () => {
+      window.removeEventListener('resize', handleScreen);
+    };
+  }, []);
+
   return (
-    <div className=" md:hidden">
-      <button className="relative z-50" onClick={handleMenu}>
+    <div className={` md:hidden`}>
+      <button className="relative p-2 border z-50" onClick={handleMenu}>
         {open ? (
-          <CloseIcon sx={{ fontSize: '30px' }} />
+          <CloseIcon sx={{ fontSize: '30px', color: 'green' }} />
         ) : (
-          <MenuIcon sx={{ fontSize: '30px' }} />
+          <MenuIcon sx={{ fontSize: '30px', color: 'purple' }} />
         )}
       </button>
-      <div className=" absolute top-0 right-0 border border-red-500 ">
-        {open &&
-          NavLinks.map(({ link, id, title }) => (
+      {open && (
+        <div
+          className="w-[250px] flex flex-col min-h-screen
+         text-black bg-slate-50 absolute top-0 right-0"
+        >
+          {NavLinks.map(({ link, id, title }) => (
             <nav
-              className=" flex flex-row w-[250px] max-h-[100vh] justify-center gap-5"
+              className="mt-16 rounded-md text-center p-4 hover:text-white hover:bg-[purple]"
               key={id}
             >
               <Link href={link}>{title}</Link>
             </nav>
           ))}
-      </div>
+          <Link
+            href={'/'}
+            className="bolder uppercase text-2xl mt-10 text-center"
+          >
+            Smart-Farm
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
