@@ -33,7 +33,7 @@ const Mobile = () => {
         {open ? (
           <CloseIcon sx={{ fontSize: '30px', color: 'green' }} />
         ) : (
-          <MenuIcon sx={{ fontSize: '30px', color: 'purple' }} />
+          <MenuIcon sx={{ fontSize: '30px', color: '#ff7f50;' }} />
         )}
       </button>
       {open && (
@@ -43,7 +43,7 @@ const Mobile = () => {
         >
           {NavLinks.map(({ link, id, title }) => (
             <nav
-              className="mt-16 rounded-md text-center p-4 hover:text-white hover:bg-[purple]"
+              className="mt-16 rounded-md text-center p-4 hover:text-white warm-color "
               key={id}
             >
               <Link href={link}>{title}</Link>
