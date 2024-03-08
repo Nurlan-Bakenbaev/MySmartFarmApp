@@ -10,13 +10,15 @@ const Navbar = () => {
       <div className="flex flex-row justify-between items-center px-4 w-full ">
         <Link
           href={'/'}
-          className="bolder uppercase text-lg md:text-xl lg:text-3xl "
+          className=" uppercase text-[#ff7f50] text-lg md:text-xl lg:text-3xl "
         >
           Smart-Farm
         </Link>
         <Link href={'/create'}>
           <Image
-            className="absolute top-4 border transition-all duration-500 ease-in-out hover:border-[purple] hover:border-[5px] border-green-800 rounded-full"
+            className="absolute top-4 border transition-all
+             duration-500 ease-in-out
+             hover:border-[5px] border-green-800 rounded-full"
             src={'/v921-audi-wit-018.png'}
             width={100}
             height={100}
@@ -26,7 +28,7 @@ const Navbar = () => {
         <div className="md:flex gap-5 hidden">
           {NavLinks.map(({ link, id, title }) => (
             <Link
-              className="text-white hover:text-blue-500"
+              className="text-white warm-color px-3 py-2 rounded-md "
               key={id}
               href={link}
             >

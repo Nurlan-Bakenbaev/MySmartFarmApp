@@ -9,7 +9,6 @@
 }
 .warm-color:hover {
   background: var(--warm-color);
-  font-weight: 500;
 }
 ::-webkit-scrollbar {
   width: 10px;

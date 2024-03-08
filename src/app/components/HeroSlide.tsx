@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const images = [
   '/hero-images/1.jpg',
@@ -22,6 +22,12 @@ const HeroSlide = () => {
       prevSlide === 0 ? images.length - 1 : prevSlide - 1,
     );
   };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className=" relative mt-14">
