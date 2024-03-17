@@ -28,7 +28,7 @@ const Mobile = () => {
   }, []);
 
   return (
-    <div className={` md:hidden`}>
+    <div className={` md:hidden `}>
       <button className="relative p-2 border z-50" onClick={handleMenu}>
         {open ? (
           <CloseIcon sx={{ fontSize: '30px', color: 'green' }} />
