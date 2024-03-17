@@ -6,11 +6,18 @@ import Image from 'next/image';
 
 const Navbar = () => {
   return (
-    <header className=" h-[10vh] prime-bg text-[#f5f5f5] drop-shadow-xl">
-      <div className="flex flex-row justify-between items-center px-4 w-full ">
+    <header
+      className="h-[10vh] prime-bg
+     text-[#f5f5f5] drop-shadow-xl"
+    >
+      <div
+        className="flex flex-row justify-between
+       items-center px-4 w-full "
+      >
         <Link
           href={'/'}
-          className=" uppercase text-[#ff7f50] text-lg md:text-xl lg:text-3xl "
+          className=" uppercase text-[#ff7f50] 
+          text-lg md:text-xl lg:text-3xl "
         >
           Smart-Farm
         </Link>

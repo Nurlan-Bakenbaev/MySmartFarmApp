@@ -30,18 +30,18 @@ const HeroSlide = () => {
   }, []);
 
   return (
-    <div className=" relative mt-14">
-      <div className="absolute flex justify-between top-1/2 w-full border">
-        <button onClick={prevSlide}>Prev</button>
-        <button onClick={nextSlide}>Next</button>
-      </div>
+    <div
+      className="border w-full flex flex-col
+     md:flex-row justify-between items-center mt-14"
+    >
       <Image
         width={600}
         height={400}
         src={images[currentSlide]}
         alt={`Slide ${currentSlide + 1}`}
-        className="mx-auto"
+        className="rounded-md"
       />
+      <div>sdmfkmdsvkmdskf</div>
     </div>
   );
 };
